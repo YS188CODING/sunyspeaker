@@ -1,0 +1,1 @@
+document.querySelectorAll('article.product').forEach((card,index)=>{const model=card.querySelector('h3')?.textContent.trim();if(!model)return;const link=document.createElement('a');link.className='catalog-link';link.href=`product.html?model=${encodeURIComponent(model)}&item=${index}`;link.textContent='View product →';card.querySelector('.product-body')?.append(link);});
