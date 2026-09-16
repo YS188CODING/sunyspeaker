@@ -39,3 +39,12 @@
 /* Keep the OEM-ODM section subordinate to the homepage hero. */
 .home-page .sun-oem h2{font-size:clamp(32px,3.25vw,48px);line-height:1.08;letter-spacing:-.045em}
 @media(max-width:650px){.home-page .sun-oem h2{font-size:34px}}
+
+/* Compact mobile system: intentionally designed for phone screens, not a reduced desktop layout. */
+@media(max-width:650px){
+  body{font-size:15px;line-height:1.55}.site-header{height:64px}.site-header nav.open{top:64px}.site-header .brand img{width:88px;height:34px}.site-header .header-button{display:none}
+  .page-hero{padding:48px 20px}.page-hero h1{font-size:34px;line-height:1.08}.page-hero p:last-child{font-size:15px;margin-top:18px}.page-section{padding:58px 20px}.page-section h2{font-size:32px;line-height:1.1}.section-head>p{font-size:15px;line-height:1.55}
+  .simple-card{min-height:0;padding:24px}.simple-card h3{font-size:20px;margin:30px 0 9px}.simple-card p{font-size:13px}.contact-form{gap:13px}.field input,.field textarea,.field select{padding:12px;font-size:14px}
+  .home-page .sun-home-hero{min-height:390px;padding:42px 20px}.home-page .sun-home-copy h1{font-size:36px;line-height:1.05}.home-page .sun-home-copy>p:not(.eyebrow){font-size:15px;margin:17px 0 22px}.home-page .sun-home-copy .actions{gap:16px}.home-page .sun-home-copy .button{padding:12px 16px;font-size:13px}.home-page .sun-section{padding:58px 20px}.home-page .sun-section h2{font-size:32px;line-height:1.08}.home-page .sun-section-head>p{font-size:14px}.home-page .sun-fact-bar strong{font-size:23px}.home-page .sun-fact-bar span{font-size:9px;letter-spacing:.08em}.home-page .sun-value-grid article,.home-page .sun-product-grid a{padding:20px;min-height:144px}.home-page .sun-value-grid h3,.home-page .sun-product-grid h3{font-size:19px;margin-top:25px}.home-page .sun-value-grid p,.home-page .sun-product-grid p{font-size:13px}.home-page .sun-oem h2{font-size:30px}.home-page .sun-home-band{padding:58px 20px}.home-page .sun-home-band h2{font-size:34px}.home-page .sun-home-band>p{font-size:14px}.home-page .sun-home-band .button{font-size:13px;padding:12px 17px}
+  footer{padding:28px 20px;gap:18px}footer p,footer small{font-size:11px}footer>div{font-size:11px;gap:16px}
+}
