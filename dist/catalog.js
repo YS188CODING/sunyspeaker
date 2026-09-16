@@ -17,3 +17,6 @@ if(catalogHeader){catalogHeader.className='site-header';catalogHeader.innerHTML=
 const catalogFooter=document.querySelector('footer');
 if(catalogFooter){catalogFooter.innerHTML='<a href="index.html" class="brand"><img src="https://speaker-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/LOGO/SUNYLOGO" alt="SUNY"></a><p>Professional loudspeaker driver engineering and manufacturing since 1994.</p><div><a href="products.html">PRODUCT</a><a href="oem-odm.html">OEM-ODM</a><a href="about.html">ABOUT</a><a href="contact.html">CONTACT</a></div><small>© 2026 Xiamen Suny Electronic Co., Ltd.</small>';}
 document.querySelectorAll('article.product').forEach((card,index)=>{const model=card.querySelector('h3')?.textContent.trim();if(!model)return;const link=document.createElement('a');link.className='catalog-link';link.href=`product.html?model=${encodeURIComponent(model)}&item=${index}`;link.textContent='View product →';card.querySelector('.product-body')?.append(link);});
+
+// Enforce plain text labels in the PRODUCT navigation.
+document.querySelectorAll('header.site-header nav a').forEach(a=>{a.textContent=a.textContent.replace(/[^A-Z-]/g,'');});
