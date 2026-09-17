@@ -11,3 +11,7 @@ html[lang="zh-CN"] .section h2,html[lang="zh-CN"] .page-section h2,html[lang="zh
 /* Prevent an English flash before the Chinese copy is applied. */
 html[data-locale="zh"] .suny-shared-hero,html[data-locale="zh"] .page-hero{visibility:hidden}
 html[data-locale="zh"].locale-ready .suny-shared-hero,html[data-locale="zh"].locale-ready .page-hero{visibility:visible}
+
+/* PRODUCT uses the shared Hero; keep its Chinese heading identical to the other pages. */
+html[lang="zh-CN"] .suny-shared-hero h1,html[lang="zh-CN"] .hero h1,html[lang="zh-CN"] .page-hero h1{font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif!important;font-size:clamp(30px,3vw,42px)!important;font-weight:600!important;line-height:1.18!important;letter-spacing:0!important}
+@media(max-width:650px){html[lang="zh-CN"] .suny-shared-hero h1,html[lang="zh-CN"] .hero h1,html[lang="zh-CN"] .page-hero h1{font-size:28px!important}}
