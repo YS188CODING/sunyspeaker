@@ -9,5 +9,5 @@ html[lang="zh-CN"] .section h2,html[lang="zh-CN"] .page-section h2,html[lang="zh
 @media(max-width:650px){html[lang="zh-CN"] .hero h1,html[lang="zh-CN"] .page-hero h1,html[lang="zh-CN"] .sun-home-copy h1{font-size:28px!important}html[lang="zh-CN"] .section h2,html[lang="zh-CN"] .page-section h2,html[lang="zh-CN"] .sun-section h2{font-size:26px!important}}
 
 /* Prevent an English flash before the Chinese copy is applied. */
-html[data-locale="zh"] .suny-shared-hero{visibility:hidden}
-html[data-locale="zh"].locale-ready .suny-shared-hero{visibility:visible}
+html[data-locale="zh"] .suny-shared-hero,html[data-locale="zh"] .page-hero{visibility:hidden}
+html[data-locale="zh"].locale-ready .suny-shared-hero,html[data-locale="zh"].locale-ready .page-hero{visibility:visible}
