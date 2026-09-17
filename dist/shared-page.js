@@ -1,7 +1,7 @@
 (() => {
   const page = document.body.classList.contains('home-page') ? 'home' : location.pathname.includes('products') ? 'product' : location.pathname.includes('oem-odm') ? 'oem' : 'contact';
   const assets = {home:'https://speaker-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/BANNER/BANNER-HOME',product:'https://speaker-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/BANNER/banner-product',oem:'https://speaker-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/BANNER/BANNER-OEM-ODM',contact:'https://speaker-1303055923.cos.ap-singapore.myqcloud.com/IMAGE/BANNER/BANNER-HOME'};
-  const copy = {home:{eyebrow:'SUNY LOUDSPEAKER DRIVERS',heading:'LOUDSPEAKER DRIVERS, BUILT AROUND YOUR NEEDS.',summary:'Multi-model. Flexible. Custom-engineered.',detail:'From proven products to customized solutions, SUNY supports your project from development to production.',actions:'<a class="button" href="products.html">Explore Products</a><a class="text-link" href="contact.html">Start a Project <b>↗</b></a>'},product:{eyebrow:'PRODUCT RANGE',heading:'287 MODELS. MULTIPLE APPLICATIONS.',summary:'Explore our range of loudspeaker drivers for automotive, subwoofer, compact, professional and ceiling applications.',actions:'<a class="button" href="#car">Explore Products</a>'},oem:{eyebrow:'OEM / ODM',heading:'FROM YOUR REQUIREMENTS TO A PRODUCTION-READY DRIVER.',summary:'From engineering and material selection to rapid prototyping, testing and production, we develop loudspeaker drivers around your application.',actions:'<a class="button" href="#oem-development">Learn About OEM / ODM</a>'},contact:{eyebrow:'CONTACT SUNY',heading:'HAVE A LOUDSPEAKER DRIVER REQUIREMENT?',summary:'Tell us about your application, dimensions, performance target or reference driver. Let’s discuss the right solution for your project.',actions:'<a class="button" href="#project-brief">Send Your Requirement</a>'}}[page];
+  const copy = {home:{eyebrow:'SUNY LOUDSPEAKER DRIVERS',heading:'LOUDSPEAKER DRIVERS, BUILT AROUND YOUR NEEDS.',summary:'Multi-model. Flexible. Custom-engineered.',detail:'From proven products to customized solutions, SUNY supports your project from development to production.',actions:'<a class="button" href="products.html">Explore Products</a><a class="text-link" href="contact.html">Start a Project <b>↗</b></a>'},product:{eyebrow:'PRODUCT RANGE',heading:'287 MODELS. MULTIPLE APPLICATIONS.',summary:'Explore our range of loudspeaker drivers for automotive, subwoofer, compact, professional and ceiling applications.',actions:'<a class="button" href="#car">Explore Products</a>'},oem:{eyebrow:'OEM / ODM',heading:'FROM YOUR REQUIREMENTS TO A PRODUCTION-READY DRIVER.',summary:'From engineering and material selection to rapid prototyping, testing and production, we develop loudspeaker drivers around your application.',actions:'<a class="button" href="#oem-development">Learn About OEM / ODM</a>'},contact:{eyebrow:'CONTACT SUNY',heading:'LET’S TALK ABOUT YOUR PROJECT.',summary:'聊聊您的项目。',actions:'<a class="button" href="#project-brief">Send Your Requirement</a>'}}[page];
   document.querySelectorAll('a[href="about.html"]').forEach(a => a.remove());
   document.querySelectorAll('.suny-page-hero,.sun-home-hero').forEach(oldHero => {const hero=document.createElement('section');hero.className='suny-shared-hero';hero.innerHTML=`<img class="suny-shared-hero__image" src="${assets[page]}" alt="SUNY loudspeaker manufacturing"><div class="suny-shared-hero__copy"><p class="eyebrow">${copy.eyebrow}</p><h1>${copy.heading}</h1><p>${copy.summary}</p>${copy.detail?`<p class="suny-shared-hero__detail">${copy.detail}</p>`:''}<div class="suny-shared-hero__actions">${copy.actions}</div></div>`;oldHero.replaceWith(hero)});
   document.querySelectorAll('.site-trust-bar,.sun-fact-bar').forEach(bar => {bar.className='suny-shared-trust';bar.setAttribute('aria-label','SUNY credentials');bar.innerHTML='<div><strong>30+</strong><span>Years of Focus</span></div><div><strong>ISO</strong><span>9001:2015</span></div><div><strong>OEM / ODM</strong><span>Engineering Support</span></div><div><strong>GLOBAL</strong><span>Supply Ready</span></div>'});
@@ -47,6 +47,29 @@
     document.querySelector('main > .page-section:not(.custom-capabilities)')?.remove();
     const cta = document.querySelector('.final-cta');
     if (cta) { cta.querySelector('.eyebrow').textContent='START A PROJECT'; cta.querySelector('h2').textContent='Have a loudspeaker driver requirement?'; cta.querySelector('p').textContent='Tell us about your application, drawing, reference driver or performance target.'; cta.querySelector('.button').textContent='Start a Project'; }
+  }
+
+
+  if (page === 'contact') {
+    document.body.classList.add('suny-contact-page');
+    const grid = document.querySelector('.contact-grid');
+    if (grid) {
+      const about = document.createElement('section');
+      about.className = 'suny-contact-about';
+      about.innerHTML = '<div><p class="eyebrow">ABOUT SUNY</p><h2>Professional loudspeaker<br>manufacturing, built to adapt.</h2></div><div><p><strong>Xiamen Suny Electronic Co., Ltd.</strong> is a professional loudspeaker and audio component manufacturer with decades of experience in loudspeaker manufacturing.</p><p>From standard loudspeaker drivers to customized OEM / ODM solutions, SUNY combines engineering expertise, flexible supply chain integration and manufacturing capabilities to support customers from product development and prototyping through to production.</p></div>';
+      grid.before(about);
+      const intro = grid.firstElementChild;
+      intro.innerHTML = '<p class="eyebrow">CONTACT US</p><h2>WE’RE HERE TO HELP.</h2><h3>欢迎与我们联系。</h3><p class="contact-note">Whether you are looking for a standard loudspeaker driver, developing a new product, or exploring an OEM / ODM project, we’d be happy to discuss your requirements.</p><p class="contact-note">Tell us about your application, dimensions, performance requirements or reference model, and our team will get back to you.</p>';
+      grid.querySelector('button[type="submit"]')?.replaceChildren('SEND YOUR REQUIREMENT');
+      const details = document.createElement('section');
+      details.className = 'suny-contact-details';
+      details.innerHTML = '<p class="eyebrow">CONTACT DETAILS</p><div><article><span>ADDRESS</span><strong>Xiamen, Fujian, China</strong></article><article><span>PHONE</span><a href="tel:+8613806013315">+86 138 0601 3315</a></article><article><span>EMAIL</span><a href="mailto:GM@XMSUNY.COM">GM@XMSUNY.COM</a></article></div>';
+      grid.after(details);
+      const cta = document.createElement('section');
+      cta.className = 'suny-contact-cta';
+      cta.innerHTML = '<div><p class="eyebrow">HAVE A PROJECT IN MIND?</p><h2>已经有项目需求？</h2><p>Share your application, drawing, reference driver or performance target with us.</p></div><a class="button light" href="#project-brief">SEND YOUR REQUIREMENT</a>';
+      details.after(cta);
+    }
   }
 
 })();
