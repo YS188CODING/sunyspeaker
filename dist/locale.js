@@ -22,9 +22,9 @@
   const setText=(selector,text)=>{const el=document.querySelector(selector);if(el)el.textContent=text};
   const cards=(selector, en, zh)=>document.querySelectorAll(selector).forEach((el,i)=>{if(el){const h=el.querySelector('h3'),p=el.querySelector('p');if(h)h.textContent=isZh?zh[i][0]:en[i][0];if(p)p.textContent=isZh?zh[i][1]:en[i][1];}});
   const hero={
-    home:['SUNY LOUDSPEAKER DRIVERS','LOUDSPEAKER DRIVERS, BUILT AROUND YOUR NEEDS.','Multi-model. Flexible. Custom-engineered.<br>From proven products to customized solutions, SUNY supports your project from development to production.','SUNY 扬声器单元','扬声器单元，围绕您的需求打造。','多型号 · 灵活生产 · 按需定制<br>从成熟产品到定制方案，SUNY 为您的项目提供从开发到生产的支持。'],
-    product:['PRODUCT RANGE','EXTENSIVE MODELS. MULTIPLE APPLICATIONS.','Explore our range of loudspeaker drivers for automotive, subwoofer, compact, professional and ceiling applications.','产品系列','丰富型号，覆盖多种应用。','涵盖汽车音响、低音扬声器、紧凑型、专业音响及吸顶扬声器等产品系列。'],
-    oem:['OEM / ODM','FROM YOUR REQUIREMENTS TO A PRODUCTION-READY DRIVER.','From engineering and material selection to rapid prototyping, testing and production, SUNY develops loudspeaker drivers around your application.','OEM / ODM','从您的需求，到可量产的扬声器单元。','从工程设计、材料选择到快速出样、测试验证与量产，SUNY 围绕您的应用需求开发合适的扬声器单元。'],
+    home:['SUNY LOUDSPEAKER DRIVERS','LOUDSPEAKER DRIVERS,<br>BUILT AROUND YOUR NEEDS','Multi-model. Flexible. Custom-engineered.<br>From proven products to customized solutions, SUNY supports your project from development to production.','SUNY 扬声器单元','扬声器单元，<br>围绕您的需求打造','多型号 · 灵活生产 · 按需定制<br>从成熟产品到定制方案，SUNY 为您的项目提供从开发到生产的支持。'],
+    product:['PRODUCT RANGE','EXTENSIVE MODELS.<br>MULTIPLE APPLICATIONS','Explore our range of loudspeaker drivers for automotive, subwoofer, compact, professional and ceiling applications.','产品系列','丰富型号，<br>覆盖多种应用','涵盖汽车音响、低音扬声器、紧凑型、专业音响及吸顶扬声器等产品系列。'],
+    oem:['OEM / ODM','FROM YOUR REQUIREMENTS<br>TO A PRODUCTION-READY DRIVER','From engineering and material selection to rapid prototyping, testing and production, SUNY develops loudspeaker drivers around your application.','OEM / ODM','从您的需求，<br>到可量产的扬声器单元','从工程设计、材料选择到快速出样、测试验证与量产，SUNY 围绕您的应用需求开发合适的扬声器单元。'],
     contact:['CONTACT SUNY','LET’S TALK ABOUT<br>YOUR PROJECT','','联系 SUNY','让我们聊聊<br>您的项目','']
   }[page];
   setText('.suny-shared-hero .eyebrow',isZh?hero[3]:hero[0]);set('.suny-shared-hero h1',isZh?hero[4]:hero[1]);set('.suny-shared-hero__copy>p:not(.eyebrow)',isZh?hero[5]:hero[2]);
@@ -76,4 +76,5 @@
     document.querySelectorAll('.brand[aria-label]').forEach(el=>el.setAttribute('aria-label','三立电子首页'));
   }
 
+  document.documentElement.classList.add('locale-ready');
 })();
