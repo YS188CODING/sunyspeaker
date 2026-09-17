@@ -21,4 +21,32 @@
     }
   }
 
+
+  if (page === 'oem') {
+    document.body.classList.add('suny-oem-page');
+    document.querySelector('.trust-bar')?.replaceWith(Object.assign(document.createElement('section'), {className:'suny-oem-signal', innerHTML:'<span>CONCEPT</span><i></i><span>ENGINEERING</span><i></i><span>VALIDATION</span><i></i><span>PRODUCTION</span>'}));
+    document.querySelector('main > .page-section')?.remove();
+    const process = document.querySelector('.oem-process');
+    if (process) {
+      process.querySelector('.eyebrow').textContent = 'OUR OEM / ODM PROCESS';
+      process.querySelector('h2').textContent = '从需求到量产，一站式推进';
+      const steps = [['01','DEFINE','明确需求','了解您的应用、尺寸、性能目标、材料及其他产品要求。'],['02','ENGINEER','工程设计','根据产品需求进行声学、结构及材料设计。'],['03','PROTOTYPE','快速出样','整合供应链与生产资源，高效完成样品开发与制作。'],['04','VALIDATE','测试验证','通过专业测试与持续优化，验证产品性能与可靠性。'],['05','PRODUCE','量产交付','将验证后的设计转化为稳定、一致的量产产品。']];
+      process.querySelector('.process-grid').innerHTML = steps.map(([n,en,zh,desc]) => '<article><span>'+n+'</span><h3>'+en+'</h3><h4>'+zh+'</h4><p>'+desc+'</p></article>').join('');
+    }
+    const customize = document.querySelector('.custom-capabilities');
+    if (customize) {
+      customize.querySelector('.eyebrow').textContent = 'WHAT WE CAN CUSTOMIZE';
+      customize.querySelector('h2').textContent = '根据您的需求，灵活定制';
+      customize.querySelector('.section-head > p').textContent = 'Engineering choices are made around your application, target performance and product constraints.';
+      const list = customize.querySelector('.oem-detail-list');
+      list.className = 'suny-oem-customize';
+      list.innerHTML = '<article><span>01</span><h3>ACOUSTIC PERFORMANCE</h3><h4>声学性能</h4><p>根据应用需求调整频响、灵敏度、阻抗及其他声学参数。</p></article><article><span>02</span><h3>MECHANICAL DESIGN</h3><h4>结构设计</h4><p>根据安装空间、尺寸及产品结构进行设计。</p></article><article><span>03</span><h3>MATERIALS</h3><h4>材料选择</h4><p>根据性能、成本及应用环境选择合适的材料与组件。</p></article><article><span>04</span><h3>APPEARANCE</h3><h4>外观与结构</h4><p>根据最终产品的设计要求进行相应定制。</p></article>';
+    }
+    const band = document.querySelector('.oem-band');
+    if (band) { band.querySelector('.eyebrow').textContent='FROM PROTOTYPE TO PRODUCTION'; band.querySelector('h2').textContent='快速出样，稳定量产'; band.querySelector('p').textContent='SUNY 不仅提供样品开发，更关注产品从样品到量产的连续性。通过工程、供应链与生产团队协同，将经过验证的设计转化为稳定、可持续的量产方案。'; }
+    document.querySelector('main > .page-section:not(.custom-capabilities)')?.remove();
+    const cta = document.querySelector('.final-cta');
+    if (cta) { cta.querySelector('.eyebrow').textContent='START A PROJECT'; cta.querySelector('h2').textContent='Have a loudspeaker driver requirement?'; cta.querySelector('p').textContent='Tell us about your application, drawing, reference driver or performance target.'; cta.querySelector('.button').textContent='Start a Project'; }
+  }
+
 })();
