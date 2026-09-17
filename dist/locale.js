@@ -49,4 +49,22 @@
     if(isZh){const ps=document.querySelectorAll('.contact-grid .contact-note');if(ps.length>1){ps[0].textContent='无论您正在寻找成熟的扬声器单元、开发新产品，还是有 OEM / ODM 项目需求，都欢迎与我们联系。';ps[1].textContent='告诉我们您的产品应用、尺寸、性能要求或参考型号，我们将根据您的需求与您进一步沟通。';}}
   }
   if(page==='product'&&isZh){const old=document.querySelector('.language-select');if(old){old.value='zh';old.dispatchEvent(new Event('change'));}}
+
+  if (isZh) {
+    const zhText = new Map([
+      ['HOME','首页'],['PRODUCT','产品'],['OEM-ODM','定制开发'],['CONTACT','联系我们'],['Start a Project','开始项目'],['Explore Products','查看产品'],['Learn About OEM / ODM','了解 OEM / ODM'],['Send Your Requirement','提交需求'],['SEND YOUR REQUIREMENT','提交您的需求'],
+      ['WHY SUNY','为什么选择三立电子？'],['PRODUCT RANGE','产品系列'],['OEM / ODM CAPABILITY','OEM / ODM 定制能力'],['FROM PROTOTYPE TO PRODUCTION','从样品到量产'],['30+ Years of Focus','30+ 年深耕'],['Product Models','产品型号'],['Engineering Support','工程支持'],['Supply Ready','全球供应'],
+      ['Drivers for Every Application.','覆盖多种应用的扬声器单元。'],['Made for Your Sound Requirement.','为您的声音需求而打造。'],['Better Sound. Built with Precision.','更好的声音，源于精密制造。'],['View All 287 Product Models ↗','查看全部产品型号 ↗'],['Explore OEM-ODM ↗','了解 OEM / ODM ↗'],
+      ['Acoustic Engineering','声学工程'],['Mechanical Design','结构设计'],['Material Selection','材料选择'],['Testing & Validation','测试与验证'],['Production Optimization','量产优化'],
+      ['A collaborative partner that helps turn your requirements into reliable, production-ready loudspeaker drivers.','不只是供应商，更是围绕客户需求协同的合作伙伴。'],
+      ['Professional loudspeaker driver engineering and manufacturing since 1994.','自 1994 年起，专注扬声器单元工程与制造。'],['Professional loudspeaker engineering and manufacturing since 1994.','自 1994 年起，专注扬声器工程与制造。'],['© 2026 Xiamen Suny Electronic Co., Ltd.','© 2026 厦门三立电子有限公司'],
+      ['CONTACT DETAILS','联系方式'],['ADDRESS','地址'],['PHONE','电话'],['EMAIL','邮箱'],['HAVE A PROJECT IN MIND?','已经有项目需求？'],['CONTACT SUNY','联系三立电子'],['ABOUT SUNY','关于三立电子'],
+      ['Professional loudspeaker manufacturing, built to adapt.','专业扬声器制造，灵活响应客户需求。'],['WE’RE HERE TO HELP.','欢迎与我们联系。'],['Have a Project in Mind?','已经有项目需求？'],['Rapid Prototyping. Reliable Production.','快速出样，稳定量产'],['EXTENSIVE MODELS. MULTIPLE APPLICATIONS.','丰富型号，覆盖多种应用。']
+    ]);
+    const walker=document.createTreeWalker(document.body,NodeFilter.SHOW_TEXT);
+    const nodes=[];while(walker.nextNode())nodes.push(walker.currentNode);
+    nodes.forEach(node=>{const value=node.nodeValue.trim();if(zhText.has(value))node.nodeValue=node.nodeValue.replace(value,zhText.get(value));});
+    document.querySelectorAll('.brand[aria-label]').forEach(el=>el.setAttribute('aria-label','三立电子首页'));
+  }
+
 })();
