@@ -1,3 +1,9 @@
 /* English and Chinese are isolated versions, never mixed on one screen. */
 .locale-switch{display:flex;gap:10px;align-items:center;margin-left:18px;font-size:12px;letter-spacing:.06em}.locale-switch a{color:#61707c}.locale-switch a.active{color:#0071e3;font-weight:700}.locale-switch i{width:1px;height:13px;background:#d3dbe1}.site-header .language-select{display:none!important}.suny-capability-chain h4,.suny-oem-page .process-grid h4,.suny-oem-customize h4{display:none}
 @media(max-width:650px){.locale-switch{margin-left:auto;margin-right:10px;font-size:11px}.site-header .locale-switch{order:2}}
+
+
+/* Match Chinese and English heading scale. */
+html[lang="zh-CN"] .hero h1,html[lang="zh-CN"] .page-hero h1,html[lang="zh-CN"] .sun-home-copy h1{font-size:clamp(30px,3vw,42px)!important;line-height:1.18!important}
+html[lang="zh-CN"] .section h2,html[lang="zh-CN"] .page-section h2,html[lang="zh-CN"] .sun-section h2{font-size:clamp(27px,2.5vw,36px)!important;line-height:1.2!important}
+@media(max-width:650px){html[lang="zh-CN"] .hero h1,html[lang="zh-CN"] .page-hero h1,html[lang="zh-CN"] .sun-home-copy h1{font-size:28px!important}html[lang="zh-CN"] .section h2,html[lang="zh-CN"] .page-section h2,html[lang="zh-CN"] .sun-section h2{font-size:26px!important}}
