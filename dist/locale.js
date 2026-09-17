@@ -3,6 +3,15 @@
   const page = location.pathname.includes('products') ? 'product' : location.pathname.includes('oem-odm') ? 'oem' : location.pathname.includes('contact') ? 'contact' : 'home';
   document.documentElement.lang = isZh ? 'zh-CN' : 'en';
   document.body.dataset.locale = isZh ? 'zh' : 'en';
+  if (isZh) {
+    document.querySelectorAll('a[href]').forEach((link) => {
+      const href = link.getAttribute('href');
+      if (!href || href.startsWith('#') || /^(https?:|mailto:|tel:)/.test(href)) return;
+      const [path, hash] = href.split('#');
+      if (!path.endsWith('.html') || /[?&]lang=/.test(path)) return;
+      link.setAttribute('href', path + (path.includes('?') ? '&' : '?') + 'lang=zh' + (hash ? '#' + hash : ''));
+    });
+  }
   const nav = document.querySelector('.site-header nav');
   if (nav && !document.querySelector('.locale-switch')) {
     const q = isZh ? '' : '?lang=zh';
