@@ -34,6 +34,7 @@
     cards('.process-grid article',[
       ['DEFINE','Clarify application, dimensions, performance targets, materials and other product needs.'],['ENGINEER','Develop acoustic, mechanical and material solutions around your requirements.'],['PROTOTYPE','Integrate supply-chain and production resources for efficient sample development.'],['VALIDATE','Verify performance and reliability through testing and ongoing optimization.'],['PRODUCE','Turn validated designs into stable, consistent production.']],
       [['明确需求','了解您的应用、尺寸、性能目标、材料及其他产品要求。'],['工程设计','根据产品需求进行声学、结构及材料设计。'],['快速出样','整合供应链与生产资源，高效完成样品开发与制作。'],['测试验证','通过专业测试与持续优化，验证产品性能与可靠性。'],['量产交付','将验证后的设计转化为稳定、一致的量产产品。']]);
+    setText('.oem-band h2',isZh?'快速出样，稳定量产':'Rapid Prototyping. Reliable Production.');setText('.oem-band>p',isZh?'SUNY 不仅提供样品开发，更关注产品从样品到量产的连续性。通过工程、供应链与生产团队协同，将经过验证的设计转化为稳定、可持续的量产方案。':'SUNY supports more than prototype development. Engineering, supply-chain and production teams work together to turn validated designs into stable, sustainable production.');
     setText('.custom-capabilities .eyebrow',isZh?'定制能力':'WHAT WE CAN CUSTOMIZE');setText('.custom-capabilities h2',isZh?'根据您的需求，灵活定制':'Flexible Customization for Your Requirements.');
     cards('.suny-oem-customize article',[
       ['ACOUSTIC PERFORMANCE','Tune frequency response, sensitivity, impedance and other acoustic parameters.'],['MECHANICAL DESIGN','Engineer around installation space, dimensions and product structure.'],['MATERIALS','Select components for performance, cost and the operating environment.'],['APPEARANCE','Adapt appearance and structure to the finished product design.']],
@@ -43,6 +44,8 @@
     set('.suny-contact-about h2',isZh?'专业扬声器制造，<br>灵活响应客户需求。':'Professional loudspeaker<br>manufacturing, built to adapt.');
     const about=document.querySelectorAll('.suny-contact-about>div:last-child p'); if(about.length===2&&isZh){about[0].textContent='厦门三立电子有限公司是一家专业的扬声器及音响零部件制造企业，在扬声器领域拥有多年的研发与制造经验。';about[1].textContent='从成熟的扬声器单元产品，到 OEM / ODM 定制开发，SUNY 依托专业工程能力、完整的供应链整合体系与制造能力，为客户提供从产品开发、快速出样到量产的支持。';}
     setText('.contact-grid .eyebrow',isZh?'联系我们':'CONTACT US');setText('.contact-grid h2',isZh?'欢迎与我们联系。':'WE’RE HERE TO HELP.');const helper=document.querySelector('.contact-grid h3');if(helper)helper.style.display='none';
+    setText('.suny-contact-cta h2',isZh?'已经有项目需求？':'Have a Project in Mind?');setText('.suny-contact-cta p:last-child',isZh?'告诉我们您的应用、图纸、参考型号或性能目标。':'Share your application, drawing, reference driver or performance target with us.');
+    if(isZh){document.querySelectorAll('.contact-form label').forEach((el,i)=>{const labels=['姓名','公司','商务邮箱','国家 / 地区','应用','预计数量','参考型号','需求说明'];el.textContent=labels[i]||el.textContent});const btn=document.querySelector('.contact-form button');if(btn)btn.textContent='提交您的需求';}
     if(isZh){const ps=document.querySelectorAll('.contact-grid .contact-note');if(ps.length>1){ps[0].textContent='无论您正在寻找成熟的扬声器单元、开发新产品，还是有 OEM / ODM 项目需求，都欢迎与我们联系。';ps[1].textContent='告诉我们您的产品应用、尺寸、性能要求或参考型号，我们将根据您的需求与您进一步沟通。';}}
   }
   if(page==='product'&&isZh){const old=document.querySelector('.language-select');if(old){old.value='zh';old.dispatchEvent(new Event('change'));}}
