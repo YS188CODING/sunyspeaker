@@ -1,0 +1,17 @@
+
+/* SUNY corporate footer + legal pages */
+.suny-footer{background:#0d2438;color:#fff;border:0;padding:0!important;display:block!important}
+.footer-main{display:grid;grid-template-columns:1.35fr .7fr 1.25fr .7fr;gap:54px;padding:58px 7% 48px}
+.footer-brand img{width:118px;height:44px;object-fit:contain;background:#fff;padding:5px 8px}
+.footer-brand p{max-width:330px;margin:20px 0 0;color:#b8c9d7;font-size:13px;line-height:1.7}
+.footer-col{display:flex;flex-direction:column;align-items:flex-start;gap:10px}
+.footer-col h4{margin:0 0 8px;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:#d9e7f1}
+.footer-col a,.footer-col p{margin:0;color:#aebfcd;font-size:12px;line-height:1.65}
+.footer-col a:hover{color:#fff}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.13);padding:19px 7% 22px;display:flex;justify-content:space-between;gap:30px;color:#8397a7;font-size:10px;line-height:1.5}
+.cookie-notice{position:fixed;z-index:1000;left:24px;right:24px;bottom:22px;max-width:980px;margin:auto;background:#fff;color:#172027;border:1px solid #d7e0e6;box-shadow:0 16px 50px rgba(10,28,44,.18);padding:18px 20px;display:flex;gap:28px;align-items:center}
+.cookie-notice strong{display:block;font-size:13px;margin-bottom:5px}.cookie-notice p{margin:0;color:#5f6d78;font-size:12px;line-height:1.55}.cookie-notice a{color:#006fcf;text-decoration:underline}.cookie-notice button{border:0;background:#073d69;color:#fff;padding:11px 17px;font-weight:650;white-space:nowrap;cursor:pointer}
+.legal-page{background:#fff}.legal-hero{padding:78px 7% 58px;background:#f3f6f8;border-bottom:1px solid #dde4e8}.legal-hero .eyebrow{margin-bottom:18px}.legal-hero h1{margin:0;font-size:clamp(34px,4vw,56px);line-height:1.06;letter-spacing:-.045em;font-weight:550}.legal-hero p{max-width:720px;color:#66727b;line-height:1.7;margin:20px 0 0}
+.legal-content{max-width:940px;padding:68px 7% 90px;margin:0 auto}.legal-content h2{font-size:23px;margin:42px 0 12px}.legal-content h2:first-child{margin-top:0}.legal-content p,.legal-content li{color:#56636e;font-size:14px;line-height:1.75}.legal-content ul{padding-left:21px}.legal-updated{font-size:11px;color:#84919b;margin-bottom:34px}.legal-zh{display:none}html[data-locale="zh"] .legal-en{display:none}html[data-locale="zh"] .legal-zh{display:block}
+@media(max-width:900px){.footer-main{grid-template-columns:1fr 1fr}.footer-bottom{flex-direction:column;gap:8px}}
+@media(max-width:650px){.footer-main{grid-template-columns:1fr;padding:42px 20px 34px;gap:30px}.footer-bottom{padding:17px 20px 22px}.cookie-notice{left:12px;right:12px;bottom:12px;display:block;padding:16px}.cookie-notice button{margin-top:13px;width:100%}.legal-hero{padding:58px 20px 42px}.legal-content{padding:46px 20px 70px}.legal-hero h1{font-size:34px}}
