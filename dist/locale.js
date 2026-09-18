@@ -136,7 +136,7 @@
   if (isZh) {
     const zhText = new Map([
       ['HOME','首页'],['PRODUCT','产品'],['OEM-ODM','定制开发'],['ABOUT','关于我们'],['CONTACT','联系我们'],['Start a Project','开始项目'],['Explore Products','查看产品'],['Learn About OEM / ODM','了解 OEM / ODM'],['Send Your Requirement','提交需求'],['SEND YOUR REQUIREMENT','提交您的需求'],
-      ['WHY SUNY','为什么选择三立电子？'],['PRODUCT RANGE','产品系列'],['OEM / ODM CAPABILITY','OEM / ODM 定制能力'],['FROM PROTOTYPE TO PRODUCTION','从样品到量产'],['30+ Years of Focus','30+ 年深耕'],['Product Models','产品型号'],['Engineering Support','工程支持'],['Supply Ready','全球供应'],
+      ['WHY SUNY','为什么选择三立电子？'],['PRODUCT RANGE','产品系列'],['OEM / ODM CAPABILITY','OEM / ODM 定制能力'],['FROM PROTOTYPE TO PRODUCTION','从样品到量产'],['30+ Years of Focus','30+ 年深耕'],['Years of Focus','年专注'],['Product Models','产品型号'],['Engineering Support','工程支持'],['Supply Ready','全球供应'],['GLOBAL','全球'],
       ['Drivers for Every Application.','覆盖多种应用的扬声器单元。'],['Made for Your Sound Requirement.','为您的声音需求而打造。'],['Better Sound. Built with Precision.','更好的声音，源于精密制造。'],['View All 287 Product Models ↗','查看全部产品型号 ↗'],['Explore OEM-ODM ↗','了解 OEM / ODM ↗'],
       ['Acoustic Engineering','声学工程'],['Mechanical Design','结构设计'],['Material Selection','材料选择'],['Testing & Validation','测试与验证'],['Production Optimization','量产优化'],
       ['A collaborative partner that helps turn your requirements into reliable, production-ready loudspeaker drivers.','不只是供应商，更是围绕客户需求协同的合作伙伴。'],
