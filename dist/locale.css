@@ -15,3 +15,8 @@ html[data-locale="zh"].locale-ready .suny-shared-hero,html[data-locale="zh"].loc
 /* PRODUCT uses the shared Hero; keep its Chinese heading identical to the other pages. */
 html[lang="zh-CN"] .suny-shared-hero h1,html[lang="zh-CN"] .hero h1,html[lang="zh-CN"] .page-hero h1{font-family:"Microsoft YaHei","PingFang SC",Arial,sans-serif!important;font-size:clamp(30px,3vw,42px)!important;font-weight:600!important;line-height:1.18!important;letter-spacing:0!important}
 @media(max-width:650px){html[lang="zh-CN"] .suny-shared-hero h1,html[lang="zh-CN"] .hero h1,html[lang="zh-CN"] .page-hero h1{font-size:28px!important}}
+
+
+/* Keep bilingual pages hidden only during the very short locale initialization, eliminating language flash. */
+html:not(.locale-ready) body{visibility:hidden}
+html.locale-ready body{visibility:visible}
