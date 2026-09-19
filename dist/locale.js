@@ -29,6 +29,24 @@
   }[page];
   setText('.suny-shared-hero .eyebrow',isZh?hero[3]:hero[0]);set('.suny-shared-hero h1',isZh?hero[4]:hero[1]);set('.suny-shared-hero__copy>p:not(.eyebrow)',isZh?hero[5]:hero[2]);
   if(page==='home'){
+    setText('.sun-applications .eyebrow',isZh?'按应用场景设计':'DESIGN BY APPLICATION');
+    set('.sun-applications h2',isZh?'面向真实场景的<br>扬声器方案':'Speaker Solutions<br>for Real Applications.');
+    setText('.sun-applications .sun-section-head>p',isZh?'从真实使用场景出发，快速找到对应的扬声器类型与产品系列。':'Start with the real-world environment. Explore the speaker types commonly used in each system, then move into the matching product families.');
+    const appData=isZh?[
+      ['汽车音响','适用于车门、中置、高音、环绕及低音系统的扬声器单元。'],
+      ['Hi-Fi 音箱','适用于书架箱、落地箱及低音系统的高音、中音与低音扬声器单元。'],
+      ['消防广播 / EVAC','适用于紧急广播、语音疏散及公共广播系统的扬声器方案。'],
+      ['智能家居音频','适用于智能音箱、联网设备及内置家庭音响的紧凑型扬声器单元。']
+    ]:[
+      ['Car Audio','Door woofers, tweeters, center speakers, surround drivers and subwoofers.'],
+      ['Hi-Fi Speakers','Tweeters, midrange drivers and woofers for bookshelf and floorstanding systems.'],
+      ['Fire Alarm & EVAC','Ceiling and public-address speakers for voice alarm and evacuation systems.'],
+      ['Smart Home Audio','Compact drivers for smart speakers, connected devices and built-in home audio.']
+    ];
+    document.querySelectorAll('.application-card').forEach((el,i)=>{const d=appData[i];if(!d)return;setText(el.querySelector('h3'),d[0]);setText(el.querySelector('p'),d[1]);const b=el.querySelector('b');if(b)b.textContent=isZh?'查看应用 →':'Explore Application →';});
+    setText('.application-hint span',isZh?'左右滑动查看更多应用':'Swipe / Scroll to explore more applications');
+    setText('.sun-products .eyebrow',isZh?'按产品分类查找':'SEARCH BY CATEGORY');
+
     set('.sun-why .sun-section-head h2',isZh?'为什么选择 SUNY？':'More Than a Supplier.<br>Built Around Your Needs.');
     setText('.sun-why .sun-section-head>p',isZh?'不只是供应商，更是围绕客户需求协同的合作伙伴。':'A collaborative partner that helps turn your requirements into reliable, production-ready loudspeaker drivers.');
     cards('.suny-capability-chain article',[
